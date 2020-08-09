@@ -1,8 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+const resolveConfig = require('tailwindcss/resolveConfig');
+const tailwindConfig = require('./tailwind.config.js');
+
+const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
 	/* Your site config here */
@@ -18,12 +17,29 @@ module.exports = {
 				name: 'Fauna Brasileira',
 				short_name: 'Fauna Brasileira',
 				start_url: '/',
-				background_color: '#f7f0eb',
-				theme_color: '#a2466c',
+				background_color: fullConfig.theme.colors.white,
+				theme_color: fullConfig.theme.colors.teal['400'],
 				display: 'standalone',
 			},
 		},
 		{ resolve: 'gatsby-plugin-offline' },
 		{ resolve: 'gatsby-plugin-sass' },
+		{
+			resolve: 'gatsby-alias-imports',
+			options: {
+				aliases: {
+					'@': 'src',
+				}
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-postcss',
+			options: {
+				postCssPlugins: [
+					require('tailwindcss')(tailwindConfig),
+					require('autoprefixer'),
+				],
+			},
+		},
 	],
 };

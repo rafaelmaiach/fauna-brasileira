@@ -1,5 +1,11 @@
 import React from 'react';
 
-export default function Home() {
-	return <div>Hello world!</div>;
-}
+import Page from '@/layouts/Page';
+
+const Home = () => (
+	<Page>
+		<h1>Teste</h1>
+	</Page>
+);
+
+export default Home;
