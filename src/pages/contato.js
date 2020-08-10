@@ -2,10 +2,10 @@ import React from 'react';
 
 import Page from '@/layouts/Page';
 
-const Home = () => (
+const Contato = () => (
 	<Page>
-		<h1>Início</h1>
+		<h1>Contato</h1>
 	</Page>
 );
 
-export default Home;
+export default Contato;
