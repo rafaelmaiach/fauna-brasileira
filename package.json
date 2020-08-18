@@ -30,6 +30,7 @@
 		"classnames": "2.2.6",
 		"gatsby-alias-imports": "1.0.4",
 		"prettier": "2.0.5",
+		"react-redux": "7.2.1",
 		"tailwindcss": "1.6.2"
 	},
 	"repository": {
