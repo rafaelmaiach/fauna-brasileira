@@ -10,7 +10,7 @@ function Header() {
 	const NavbarLinks = [
 		{ to: '/', text: 'Início' },
 		{ to: '/fauna-ameacada/', text: 'Fauna Ameaçada' },
-		{ to: '/contato/', text: 'Contato' },
+		{ to: '/fauna-extinta/', text: 'Fauna Extinta' },
 	].map(({ to, text }) => <NavbarLink to={to} key={to}>{text}</NavbarLink>);
 
 	return (
