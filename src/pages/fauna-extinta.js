@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { fetchEndangeredFauna } from 'features/fauna/endangeredFaunaSlice';
+import { fetchExtinctFauna } from 'features/fauna/extinctFaunaSlice';
 import {
-	continentalFishSelectorEndangered,
-	marineFishSelectorEndangered,
-	mammalSelectorEndangered,
-	amphibianSelectorEndangered,
-	aquaticInvertebrateSelectorEndangered,
-	terrestrialInvertebrateSelectorEndangered,
-	birdsSelectorEndangered,
-	reptileSelectorEndangered,
+	continentalFishSelectorExtinct,
+	marineFishSelectorExtinct,
+	mammalSelectorExtinct,
+	amphibianSelectorExtinct,
+	aquaticInvertebrateSelectorExtinct,
+	terrestrialInvertebrateSelectorExtinct,
+	birdsSelectorExtinct,
+	reptileSelectorExtinct,
 } from 'state/selectors';
 
 import Page from '@/layouts/Page';
@@ -23,17 +23,17 @@ const FaunaAmeacada = () => {
 	const [currentFauna, setCurrentFauna] = useState(null);
 
 	useEffect(() => {
-		dispatch(fetchEndangeredFauna());
+		dispatch(fetchExtinctFauna());
 	}, [dispatch]);
 
-	const continentalFishData = useSelector(continentalFishSelectorEndangered);
-	const marineFishData = useSelector(marineFishSelectorEndangered);
-	const mammalData = useSelector(mammalSelectorEndangered);
-	const amphibianData = useSelector(amphibianSelectorEndangered);
-	const aquaticInvertebrateData = useSelector(aquaticInvertebrateSelectorEndangered);
-	const terrestrialInvertebrateData = useSelector(terrestrialInvertebrateSelectorEndangered);
-	const birdsData = useSelector(birdsSelectorEndangered);
-	const reptileData = useSelector(reptileSelectorEndangered);
+	const continentalFishData = useSelector(continentalFishSelectorExtinct);
+	const marineFishData = useSelector(marineFishSelectorExtinct);
+	const mammalData = useSelector(mammalSelectorExtinct);
+	const amphibianData = useSelector(amphibianSelectorExtinct);
+	const aquaticInvertebrateData = useSelector(aquaticInvertebrateSelectorExtinct);
+	const terrestrialInvertebrateData = useSelector(terrestrialInvertebrateSelectorExtinct);
+	const birdsData = useSelector(birdsSelectorExtinct);
+	const reptileData = useSelector(reptileSelectorExtinct);
 
 	useEffect(() => {
 		setFaunaData([
@@ -78,7 +78,7 @@ const FaunaAmeacada = () => {
 		);
 	}
 
-	const faunaCards = faunaData.map(info => <Card key={info.label} {...info} />);
+	const faunaCards = faunaData.map(info => <Card key={info.label} {...info} isExtinct />);
 
 	return (
 		<Page>
