@@ -17,6 +17,7 @@ import Page from '@/layouts/Page';
 import Card from '@/components/Card';
 import FaunaInformation from '@/components/FaunaInformation';
 import Loading from '@/components/Loading';
+import './index.scss';
 
 const FaunaAmeacada = () => {
 	const dispatch = useDispatch();
@@ -83,7 +84,7 @@ const FaunaAmeacada = () => {
 
 	return (
 		<Page>
-			<div className="container flex justify-center flex-wrap">
+			<div id="faunaExtinta" className="container flex justify-center flex-wrap">
 				{
 					currentFauna
 					? <FaunaInformation information={currentFauna} reset={() => setCurrentFauna(null)} />
