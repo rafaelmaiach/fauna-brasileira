@@ -1,0 +1,59 @@
+
+.mapa-brasil{
+    width: 40%;
+    margin: 3.5rem 4rem;
+}
+
+.txt-sobre{
+    font-size: 24px;
+    text-align: left;
+    font-weight: 400;
+    margin: 150px 20px;
+}
+
+.title-fauna{
+    font-weight: bold;
+}
+
+.sobre{
+    margin: 12px 12px;
+    @media screen and (min-width: 1024px){
+        display: flex;
+    }
+    @media screen and (max-width: 1024px){
+        .txt-sobre{
+            font-size: 20px;
+
+        }
+        .mapa-brasil{
+            width: 60%;
+        }
+    }
+}
+
+.btn-acessar-lista{
+    position: relative;
+    top: 100px;
+    background: green;
+    color: yellow;
+    padding: 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid transparent;
+    @media screen and (max-width: 1024px){
+        position: relative;
+        left: 80px;
+        top: 40px;
+        margin-bottom: 100px;
+    }
+    &:hover{
+        background: yellow;
+        color: green;
+    }
+}
+
+
+
+
+
