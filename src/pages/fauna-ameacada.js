@@ -16,6 +16,7 @@ import {
 import Page from '@/layouts/Page';
 import Card from '@/components/Card';
 import FaunaInformation from '@/components/FaunaInformation';
+import Loading from '@/components/Loading';
 
 const FaunaAmeacada = () => {
 	const dispatch = useDispatch();
@@ -73,7 +74,7 @@ const FaunaAmeacada = () => {
 	if (isLoading) {
 		return (
 			<Page>
-				<h1>Loading...</h1>
+				<Loading />
 			</Page>
 		);
 	}
