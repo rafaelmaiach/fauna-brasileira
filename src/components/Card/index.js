@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Card({ label, quantity, trigger, isExtinct = false }) {
+function Card({ label, quantity, trigger, isExtinct = false, icon }) {
 	let quantityText;
 
 	if (isExtinct) {
@@ -10,7 +10,7 @@ function Card({ label, quantity, trigger, isExtinct = false }) {
 	}
 
 	return (
-		<div className="card lg:w-1/3 md:w-full mt-8 mx-2 flex justify-between flex-col">
+		<div className="card lg:w-1/3 md:w-full mt-8 mx-2 flex justify-between flex-col" onClick={trigger}>
 			<div className="card-content">
 				<p className="title">
 					{ label }
@@ -18,10 +18,9 @@ function Card({ label, quantity, trigger, isExtinct = false }) {
 				<p className="subtitle">
 					{ quantityText }
 				</p>
+				<img className="animalsIcons" src={icon}/>
 			</div>
-			<footer className="card-footer">
-				<button className="card-footer-item" onClick={trigger}>Ver</button>
-			</footer>
+			
 		</div>
 	);
 }

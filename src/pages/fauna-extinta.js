@@ -17,6 +17,7 @@ import Page from '@/layouts/Page';
 import Card from '@/components/Card';
 import FaunaInformation from '@/components/FaunaInformation';
 import Loading from '@/components/Loading';
+import './index.scss';
 
 const FaunaAmeacada = () => {
 	const dispatch = useDispatch();
@@ -35,17 +36,16 @@ const FaunaAmeacada = () => {
 	const terrestrialInvertebrateData = useSelector(terrestrialInvertebrateSelectorExtinct);
 	const birdsData = useSelector(birdsSelectorExtinct);
 	const reptileData = useSelector(reptileSelectorExtinct);
-
 	useEffect(() => {
 		setFaunaData([
-			{ label: 'Peixes Continentais', quantity: continentalFishData.length, trigger: () =>  setCurrentFauna(continentalFishData)},
-			{ label: 'Peixes Marinhos', quantity: marineFishData.length, trigger: () =>  setCurrentFauna(marineFishData) },
-			{ label: 'Mamíferos', quantity: mammalData.length, trigger: () =>  setCurrentFauna(mammalData) },
-			{ label: 'Anfíbios', quantity: amphibianData.length, trigger: () =>  setCurrentFauna(amphibianData) },
-			{ label: 'Invertebrados Aquáticos', quantity: aquaticInvertebrateData.length, trigger: () =>  setCurrentFauna(aquaticInvertebrateData) },
-			{ label: 'Invertebrados Terrestres', quantity: terrestrialInvertebrateData.length, trigger: () =>  setCurrentFauna(terrestrialInvertebrateData) },
-			{ label: 'Aves', quantity: birdsData.length, trigger: () =>  setCurrentFauna(birdsData) },
-			{ label: 'Répteis', quantity: reptileData.length, trigger: () =>  setCurrentFauna(reptileData) },
+			{ label: 'Peixes Continentais', quantity: continentalFishData.length, trigger: () =>  setCurrentFauna(continentalFishData), icon: require('../assets/images/animals/peixesContinentais.svg')},
+			{ label: 'Peixes Marinhos', quantity: marineFishData.length, trigger: () =>  setCurrentFauna(marineFishData),icon: require('../assets/images/animals/peixesMarinhos.svg') },
+			{ label: 'Mamíferos', quantity: mammalData.length, trigger: () =>  setCurrentFauna(mammalData), icon: require('../assets/images/animals/mamiferos.svg') },
+			{ label: 'Anfíbios', quantity: amphibianData.length, trigger: () =>  setCurrentFauna(amphibianData), icon: require('../assets/images/animals/anfibios.svg') },
+			{ label: 'Invertebrados Aquáticos', quantity: aquaticInvertebrateData.length, trigger: () =>  setCurrentFauna(aquaticInvertebrateData), icon: require('../assets/images/animals/invertebradosAquaticos.svg') },
+			{ label: 'Invertebrados Terrestres', quantity: terrestrialInvertebrateData.length, trigger: () =>  setCurrentFauna(terrestrialInvertebrateData), icon: require('../assets/images/animals/invertebradosTerrestres.svg') },
+			{ label: 'Aves', quantity: birdsData.length, trigger: () =>  setCurrentFauna(birdsData), icon: require('../assets/images/animals/aves.svg') },
+			{ label: 'Répteis', quantity: reptileData.length, trigger: () =>  setCurrentFauna(reptileData), icon: require('../assets/images/animals/repteis.svg') },
 		]);
 	}, [
 		continentalFishData,
@@ -83,7 +83,7 @@ const FaunaAmeacada = () => {
 
 	return (
 		<Page>
-			<div className="container flex justify-center flex-wrap">
+			<div id="faunaExtinta" className="container flex justify-center flex-wrap">
 				{
 					currentFauna
 					? <FaunaInformation information={currentFauna} reset={() => setCurrentFauna(null)} />
